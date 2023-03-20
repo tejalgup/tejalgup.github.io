@@ -20,7 +20,7 @@ instagram_username: "tejal.gup"
 #########################################################################################
 theme: "hacker"
 
-rss: rss
+#rss: rss
 
 kramdown:
   syntax_highlighter_opts:
