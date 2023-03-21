@@ -1,4 +1,4 @@
-title: "The Tea Sess"
+title: "Tejal Gupta: Data Blog"
 author: "Tejal Gupta"
 description: "Pitt Student Graduating 2024 in Econ-Stats with a CS minor interested in everything data" # This will show up in places like twitter, linkedin, etc, if you share your sites url as a post.
 
@@ -41,3 +41,15 @@ defaults:
       type: post
     values:
       tags: Other
+
+# Set primary color
+brand-primary: "#ff69b4"
+
+# Set secondary color
+brand-secondary: "#ffe4e1"
+
+# Set tertiary color
+brand-tertiary: "#f8b6c2"
+
+# Set highlight color
+brand-highlight: "#e75480"
