@@ -18,7 +18,7 @@ instagram_username: "tejal.gup"
 #########################################################################################
 ######### Nothing below needs to be changed (unless you know what you're doing) #########
 #########################################################################################
-theme: "minima"
+theme: pages-themes/midnight@v0.2.0
 
 #rss: rss
 
@@ -27,6 +27,7 @@ kramdown:
     disable: true
     
 plugins:
+  - jekyll-remote-theme # add this line to the plugins list if you already have one
   - jekyll-feed
   - jekyll-sitemap
 
