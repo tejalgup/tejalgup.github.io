@@ -18,7 +18,7 @@ instagram_username: "tejal.gup"
 #########################################################################################
 ######### Nothing below needs to be changed (unless you know what you're doing) #########
 #########################################################################################
-remote_theme: pages-themes/modernist@v0.2.0
+remote_theme: pages-themes/midnight@v0.2.0
 
 #rss: rss
 
