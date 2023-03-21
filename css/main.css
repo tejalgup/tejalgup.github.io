@@ -1,7 +1,0 @@
-$brand-primary: #ff69b4; // pink
-$brand-secondary: #ffe4e1; // light pink
-$brand-tertiary: #f8b6c2; // lightest pink
-$brand-highlight: #e75480; // dark pink
-
-// Import the rest of the styles from the Modernist theme
-@import "modernist";
