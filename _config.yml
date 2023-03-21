@@ -1,16 +1,16 @@
-title: Tejal Gupta: Data Blog
-author: Tejal Gupta
-description: Pitt Student Graduating 2024 in Econ-Stats with a CS minor interested in everything data # This will show up in places like twitter, linkedin, etc, if you share your sites url as a post.
+title: "Tejal Gupta: Data Blog"
+author: "Tejal Gupta"
+description: "Pitt Student Graduating 2024 in Econ-Stats with a CS Minor interested in everything data" # This will show up in places like twitter, linkedin, etc, if you share your sites url as a post.
 
 # Email / Social media user names used by the minima theme:
 # All of these are optional and can be removed or commented out
-email: tejalgupta@pitt.edu
+email: "tejalgupta@pitt.edu"
 #twitter_username: twitteruser
-github_username: tejalgup
-linkedin_username: tejal-gupta
+github_username: "tejalgup"
+linkedin_username: "tejal-gupta"
 #facebook_username: username
 #flickr_username: username
-instagram_username: tejal.gup
+instagram_username: "tejal.gup"
 #pinterest_username: username
 #youtube_username: username
 #googleplus_username: +username
