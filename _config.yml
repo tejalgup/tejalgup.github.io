@@ -40,10 +40,10 @@ author: tejalgup
 #   "Copyright (c) 2017-{currentYear} <a href="https://example.com">{author}</a>"
 #   "Copyright © 2017-2021 Foobar"
 #
-copyright: "Copyright © 2023 Tejalgup"
+#copyright: "Copyright © 2023 Tejalgup"
 
 description: >- # this means to ignore newlines until "baseurl:"
-  Tejal Gupta: Pitt student interested in data science and machine learning!
+  Pitt student interested in Data Science and Machine Learning!
 
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "" # the base hostname & protocol for your site, e.g. https://example.com
