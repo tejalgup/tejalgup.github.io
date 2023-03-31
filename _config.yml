@@ -108,7 +108,7 @@ yat:
 # theme_color: snowwhite
 #
 # Custom color as below:
-theme_color: ffdab9
+theme_color: '#ffdab9'
 # You can choose a brand color
 # Default brand colors as below:
 # orangered: #ff5100
@@ -118,7 +118,7 @@ theme_color: ffdab9
 # brand_color: orangered
 #
 # Custom color as below:
-brand_color: ffb6c1
+brand_color: '#ff2647'
 
 # Night/Dark mode
 # Default mode is "auto", "auto" is for auto nightshift
