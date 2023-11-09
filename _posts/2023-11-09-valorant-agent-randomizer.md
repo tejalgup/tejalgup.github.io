@@ -39,6 +39,34 @@ function createAgentMatrix() {
     roleRow.className = "role-row";
 
 
+        // Create a button to toggle agents of this role
+        var toggleButton = document.createElement("button");
+        toggleButton.className = "toggle-button";
+        toggleButton.addEventListener("click", function() {
+            var roleAgents = agentRoles[role];
+            var shouldSelect = !roleAgents.every(agent => selectedAgents.includes(agent));
+            if (shouldSelect) {
+                selectedAgents.push(...roleAgents);
+            } else {
+                roleAgents.forEach(agent => {
+                    var index = selectedAgents.indexOf(agent);
+                    if (index !== -1) {
+                        selectedAgents.splice(index, 1);
+                    }
+                });
+            }
+            createAgentMatrix(); // Re-create the matrix after toggling
+        });
+
+        // Set toggle button image based on role
+        var roleIcon = document.createElement("img");
+        roleIcon.className = "role-icon";
+        var roleIconURL = `https://static.valorantstats.xyz/role-icons/${role.toLowerCase()}-icon.png`;
+        roleIcon.src = roleIconURL;
+        
+        toggleButton.appendChild(roleIcon);
+        roleRow.appendChild(toggleButton);
+        
     agentRoles[role].forEach(agent => {
       var button = document.createElement("button");
       button.className = "agent-button";
