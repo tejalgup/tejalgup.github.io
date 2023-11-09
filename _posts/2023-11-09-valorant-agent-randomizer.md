@@ -28,6 +28,21 @@ Select an agent role o(〃＾▽＾〃)o:
 
   var selectedAgents = [];
 
+function toggleRoleAgents(role) {
+    var roleAgents = agentRoles[role];
+    var shouldSelect = !roleAgents.every(agent => selectedAgents.includes(agent));
+    if (shouldSelect) {
+        selectedAgents.push(...roleAgents);
+    } else {
+        roleAgents.forEach(agent => {
+            var index = selectedAgents.indexOf(agent);
+            if (index !== -1) {
+                selectedAgents.splice(index, 1);
+            }
+        });
+    }
+    createAgentMatrix(); // Re-create the matrix after toggling
+}
 
 function createAgentMatrix() {
     var agentMatrixContainer = document.getElementById("agentMatrixContainer");
@@ -120,6 +135,25 @@ createAgentMatrix();
 
   }
 
+  // Attach the function to the button click event
+document.getElementById("generateButton").addEventListener("click", displayRandomAgent);
+
+// Attach the toggle function to the role toggle button click events
+document.getElementById("toggleDuelist").addEventListener("click", function() {
+    toggleRoleAgents("Duelist");
+});
+document.getElementById("toggleInitiator").addEventListener("click", function() {
+    toggleRoleAgents("Initiator");
+});
+document.getElementById("toggleController").addEventListener("click", function() {
+    toggleRoleAgents("Controller");
+});
+document.getElementById("toggleSentinel").addEventListener("click", function() {
+    toggleRoleAgents("Sentinel");
+});
+
+
+
  // Attach the function to the button click event
 document.getElementById("generateButton").addEventListener("click", displayRandomAgent);
 </script>  
@@ -140,8 +174,8 @@ document.getElementById("generateButton").addEventListener("click", displayRando
 }
 
 .role-icon {
-  width: 80px; /* Set the width to match the agent images */
-  height: 80px; /* Set the height to match the agent images */
+  width: 70px; /* Set the width to match the agent images */
+  height: 70px; /* Set the height to match the agent images */
 }
 
 .agent-button.selected {
