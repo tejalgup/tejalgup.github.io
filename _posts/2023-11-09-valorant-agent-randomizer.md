@@ -118,24 +118,7 @@ function createAgentMatrix() {
     agentMatrixContainer.appendChild(roleRow);
     });
   }
-
-createAgentMatrix();
-
-  // Function to display a randomly selected agent from the chosen role
-  function displayRandomAgent() {
-
-    // Generate a random agent from the selected array
-    var randomIndex = Math.floor(Math.random() * selectedAgents.length);
-    var selectedAgent = selectedAgents[randomIndex];
-    var imagePath = "/assets/images/agents/" + selectedAgent + ".png"
-    
-     // Set the agent name and image
-    document.getElementById("agentName").textContent = "Selected Agent: " + selectedAgent;
-    document.getElementById("agentImage").src = imagePath;
-
-  }
-
-  // Attach the function to the button click event
+// Attach the function to the button click event
 document.getElementById("generateButton").addEventListener("click", displayRandomAgent);
 
 // Attach the toggle function to the role toggle button click events
@@ -151,7 +134,21 @@ document.getElementById("toggleController").addEventListener("click", function()
 document.getElementById("toggleSentinel").addEventListener("click", function() {
     toggleRoleAgents("Sentinel");
 });
+createAgentMatrix();
 
+  // Function to display a randomly selected agent from the chosen role
+  function displayRandomAgent() {
+
+    // Generate a random agent from the selected array
+    var randomIndex = Math.floor(Math.random() * selectedAgents.length);
+    var selectedAgent = selectedAgents[randomIndex];
+    var imagePath = "/assets/images/agents/" + selectedAgent + ".png"
+    
+     // Set the agent name and image
+    document.getElementById("agentName").textContent = "Selected Agent: " + selectedAgent;
+    document.getElementById("agentImage").src = imagePath;
+
+  }
 
 
  // Attach the function to the button click event
