@@ -29,7 +29,7 @@ Select an agent role o(〃＾▽＾〃)o:
   var initiatorAgents = ["Sova", "Breach", "KAYO", "Skye", "Fade", "Gekko"];
   var controllerAgents = ["Brimstone", "Viper", "Omen", "Astra", "Harbor"];
   var sentinelAgents = ["Sage", "Cypher", "Killjoy", "Chamber", "Deadlock"];
-  var agentArray = duelistAgents.concat(initiatorAgents, controllerAgents, sentinelAgents);
+  var allAgents = duelistAgents.concat(initiatorAgents, controllerAgents, sentinelAgents);
 
   // Function to display a randomly selected agent from the chosen role
   function displayRandomAgent() {
