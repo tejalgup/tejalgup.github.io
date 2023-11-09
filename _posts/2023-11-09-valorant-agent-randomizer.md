@@ -17,7 +17,6 @@ Select an agent role o(〃＾▽＾〃)o:
 <button id="generateButton">Generate Agent Image</button>
 <div id="agentImageContainer">
   <div id="agentName"></div>
-  <div id="fileName"></div>
   <img id="agentImage" src="" alt="Agent Image">
 </div>
 
@@ -52,15 +51,12 @@ Select an agent role o(〃＾▽＾〃)o:
     var randomIndex = Math.floor(Math.random() * agentArray.length);
     var selectedAgent = agentArray[randomIndex];
 
-    var agentFileName = "agents/" + selectedAgent + ".png"; // Convert agent name to lowercase, remove spaces, and add the file extension
+    var agentURL = " https://liquipedia.net/valorant/File:" + selectedAgent + "_Artwork.png"
 
     
      // Set the agent name and image
     document.getElementById("agentName").textContent = "Selected Agent: " + selectedAgent;
-    document.getElementById("fileName").textContent = "File Name: " + agentFileName;
-    document.getElementById("agentImage").src = agentFileName;
-
-    // Print the filename to the console for debugging
+    document.getElementById("agentImage").src = agentURL;
 
   }
 
