@@ -5,7 +5,7 @@ categories: gaming
 
 # Random Agent Generator
 
-Select an agent role o(〃＾▽＾〃)o: 
+Select an agents! Click role icon to toggle row on/off o(〃＾▽＾〃)o: 
 
 <button id="generateButton">Pick an Agent!</button>
 
@@ -163,8 +163,8 @@ function createAgentMatrix() {
 }
 
 .role-icon {
-  width: 80px; /* Set the width to match the agent images */
-  height: 80px; /* Set the height to match the agent images */
+  width: 76px; /* Set the width to match the agent images */
+  height: 76px; /* Set the height to match the agent images */
 }
 
 .agent-button.selected {
