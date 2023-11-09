@@ -27,6 +27,14 @@ Select an agent role o(〃＾▽＾〃)o:
 <script>
 
   function createAgentMatrix() {
+
+  var duelistAgents = ["Jett", "Raze", "Phoenix", "Reyna", "Yoru", "Neon", "Iso"];
+  var initiatorAgents = ["Sova", "Breach", "KAYO", "Skye", "Fade", "Gekko"];
+  var controllerAgents = ["Brimstone", "Viper", "Omen", "Astra", "Harbor"];
+  var sentinelAgents = ["Sage", "Cypher", "Killjoy", "Chamber", "Deadlock"];
+  var agentArray = duelistAgents.concat(initiatorAgents, controllerAgents, sentinelAgents);
+
+
   var agentMatrixContainer = document.getElementById("agentMatrixContainer");
   agentMatrixContainer.innerHTML = ""; // Clear previous content
 
@@ -82,16 +90,20 @@ Select an agent role o(〃＾▽＾〃)o:
     var agentArray = [];
 
     // Determine the appropriate array based on the selected role
-    if (selectedRole === "Duelist") {
-      agentArray = duelistAgents;
-    } else if (selectedRole === "Initiator") {
-      agentArray = initiatorAgents;
-    } else if (selectedRole === "Controller") {
-      agentArray = controllerAgents;
-    } else if (selectedRole === "Sentinel") {
-      agentArray = sentinelAgents;
-    } else if (selectedRole === "All") {
-      agentArray = allAgents;
+    if (selectedRole === "Custom") {
+    createAgentMatrix(); // Show agent matrix for custom selection
+    } else {
+
+        if (selectedRole === "Duelist") {
+        agentArray = duelistAgents;
+        } else if (selectedRole === "Initiator") {
+        agentArray = initiatorAgents;
+        } else if (selectedRole === "Controller") {
+        agentArray = controllerAgents;
+        } else if (selectedRole === "Sentinel") {
+        agentArray = sentinelAgents;
+        } else if (selectedRole === "All") {
+        agentArray = allAgents;
     }
 
     // Generate a random agent from the selected array
