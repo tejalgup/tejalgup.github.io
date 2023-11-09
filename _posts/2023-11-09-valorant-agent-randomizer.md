@@ -108,7 +108,6 @@ function createAgentMatrix() {
     agentMatrixContainer.appendChild(roleRow);
     });
     if (selectedAgents.length === 0) {
-      // No agents selected, display a message and set the initial Valorant image
       document.getElementById("agentName").textContent = "Nothing Selected";
       document.getElementById("agentImage").src = "/assets/images/agents/Valorant.png";
     }
