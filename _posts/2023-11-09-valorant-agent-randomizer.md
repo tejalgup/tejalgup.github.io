@@ -118,7 +118,7 @@ function createAgentMatrix() {
 
     if (selectedAgents.length === 0) {
       // No agents selected, display a message and set the initial Valorant image
-      agentNameElement.textContent = "Nothing Selected";
+      agentNameElement.textContent = "";
       agentImageElement.src = "/assets/images/agents/Valorant.png";
     } else {
     // Generate a random agent from the selected array
