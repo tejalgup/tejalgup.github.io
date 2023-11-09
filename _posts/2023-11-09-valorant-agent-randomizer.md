@@ -9,8 +9,6 @@ Select an agent role o(〃＾▽＾〃)o:
 
 <button id="generateButton">Pick an Agent!</button>
 
-
-
 <div id="agentMatrixContainer" class="agent-matrix-container"></div>
 
 <div id="agentImageContainer">
@@ -46,6 +44,7 @@ function toggleRoleAgents(role) {
 
 function createAgentMatrix() {
     var agentMatrixContainer = document.getElementById("agentMatrixContainer");
+    agentMatrixContainer.innerHTML = ''; // Clear the container before re-populating
 
       // Iterate through each role in agentRoles
     Object.keys(agentRoles).forEach(role => {
@@ -58,34 +57,20 @@ function createAgentMatrix() {
         var toggleButton = document.createElement("button");
         toggleButton.className = "toggle-button";
         toggleButton.addEventListener("click", function() {
-            selectedAgents = []; // Clear selectedAgents array before adding agents
-            var roleAgents = agentRoles[role];
-            var shouldSelect = !roleAgents.every(agent => selectedAgents.includes(agent));
-            if (shouldSelect) {
-                selectedAgents.push(...roleAgents);
-            } else {
-                roleAgents.forEach(agent => {
-                    var index = selectedAgents.indexOf(agent);
-                    if (index !== -1) {
-                        selectedAgents.splice(index, 1);
-                    }
-                });
-            }
-            createAgentMatrix(); // Re-create the matrix after toggling
+            toggleRoleAgents(role);
         });
+            // Set toggle button image based on role
+      var roleIcon = document.createElement("img");
+      roleIcon.className = "role-icon";
+      var roleIconURL = `https://static.valorantstats.xyz/role-icons/${role.toLowerCase()}-icon.png`;
+      roleIcon.src = roleIconURL;
 
-        // Set toggle button image based on role
-        var roleIcon = document.createElement("img");
-        roleIcon.className = "role-icon";
-        var roleIconURL = `https://static.valorantstats.xyz/role-icons/${role.toLowerCase()}-icon.png`;
-        roleIcon.src = roleIconURL;
-        
-        toggleButton.appendChild(roleIcon);
-        roleRow.appendChild(toggleButton);
+      toggleButton.appendChild(roleIcon);
+      roleRow.appendChild(toggleButton);
 
-    agentRoles[ role].forEach(agent => {
-      var button = document.createElement("button");
-      button.className = "agent-button";
+      agentRoles[role].forEach(agent => {
+        var button = document.createElement("button");
+        button.className = "agent-button";
 
       var agentImage = document.createElement("img");
       agentImage.src = `https://static.valorantstats.xyz/agent-headshots/${agent.toLowerCase()}-headshot.png`;
@@ -118,23 +103,8 @@ function createAgentMatrix() {
     agentMatrixContainer.appendChild(roleRow);
     });
   }
-// Attach the function to the button click event
-document.getElementById("generateButton").addEventListener("click", displayRandomAgent);
 
-// Attach the toggle function to the role toggle button click events
-document.getElementById("toggleDuelist").addEventListener("click", function() {
-    toggleRoleAgents("Duelist");
-});
-document.getElementById("toggleInitiator").addEventListener("click", function() {
-    toggleRoleAgents("Initiator");
-});
-document.getElementById("toggleController").addEventListener("click", function() {
-    toggleRoleAgents("Controller");
-});
-document.getElementById("toggleSentinel").addEventListener("click", function() {
-    toggleRoleAgents("Sentinel");
-});
-createAgentMatrix();
+  createAgentMatrix();
 
   // Function to display a randomly selected agent from the chosen role
   function displayRandomAgent() {
@@ -147,12 +117,24 @@ createAgentMatrix();
      // Set the agent name and image
     document.getElementById("agentName").textContent = "Selected Agent: " + selectedAgent;
     document.getElementById("agentImage").src = imagePath;
-
   }
 
+  // Attach the function to the button click event
+  document.getElementById("generateButton").addEventListener("click", displayRandomAgent);
 
- // Attach the function to the button click event
-document.getElementById("generateButton").addEventListener("click", displayRandomAgent);
+  // Attach the toggle function to the role toggle button click events
+  document.getElementById("toggleDuelist").addEventListener("click", function() {
+    toggleRoleAgents("Duelist");
+  });
+  document.getElementById("toggleInitiator").addEventListener("click", function() {
+    toggleRoleAgents("Initiator");
+  });
+  document.getElementById("toggleController").addEventListener("click", function() {
+    toggleRoleAgents("Controller");
+  });
+  document.getElementById("toggleSentinel").addEventListener("click", function() {
+    toggleRoleAgents("Sentinel");
+  });
 </script>  
 
 <style>
