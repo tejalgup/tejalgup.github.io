@@ -53,10 +53,10 @@ Select an agent role o(〃＾▽＾〃)o:
     
      // Set the agent name and image
     document.getElementById("agentName").textContent = "Selected Agent: " + selectedAgent;
-    document.getElementById("agentImage").src = "agents/" + selectedAgent.toLowerCase().replace(/\s/g, '') + ".png";
+    document.getElementById("agentImage").src = "agents/" + selectedAgent + ".png";
 
   }
-  
+
  // Attach the function to the button click event
   document.getElementById("generateButton").addEventListener("click", displayRandomAgent);
 </script>  
