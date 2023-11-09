@@ -59,7 +59,7 @@ Select an agent role o(〃＾▽＾〃)o:
     document.getElementById("agentImage").src = agentFileName;
 
     // Print the filename to the console for debugging
-    console.log("Selected Agent's Image Filename: " + agentFileName);
+    document.getElementById("fileName").textContent = "File Name: " + agentFileName;
   }
 
  // Attach the function to the button click event
