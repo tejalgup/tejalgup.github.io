@@ -66,8 +66,8 @@ function createAgentMatrix() {
         
         toggleButton.appendChild(roleIcon);
         roleRow.appendChild(toggleButton);
-        
-    agentRoles[role].forEach(agent => {
+
+    agentRoles[ role].forEach(agent => {
       var button = document.createElement("button");
       button.className = "agent-button";
 
@@ -141,6 +141,11 @@ document.getElementById("generateButton").addEventListener("click", displayRando
   cursor: pointer;
   border: none;
   background-size: cover;
+}
+
+.role-icon {
+  width: 80px; /* Set the width to match the agent images */
+  height: 80px; /* Set the height to match the agent images */
 }
 
 .agent-button.selected {
