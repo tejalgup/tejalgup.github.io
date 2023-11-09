@@ -17,7 +17,7 @@ Select an agent role o(〃＾▽＾〃)o:
 <button id="generateButton">Generate Agent Image</button>
 <div id="agentImageContainer">
   <div id="agentName"></div>
-  <div id="fileName></div>
+  <div id="fileName"></div>
   <img id="agentImage" src="" alt="Agent Image">
 </div>
 
