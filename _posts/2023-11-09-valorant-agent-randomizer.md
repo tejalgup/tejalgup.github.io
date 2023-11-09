@@ -38,11 +38,6 @@ function createAgentMatrix() {
     var roleRow = document.createElement("div");
     roleRow.className = "role-row";
 
-    // Create a header for the role
-    var roleHeader = document.createElement("h2");
-    roleHeader.textContent = role;
-    roleRow.appendChild(roleHeader);
-
 
     agentRoles[role].forEach(agent => {
       var button = document.createElement("button");
