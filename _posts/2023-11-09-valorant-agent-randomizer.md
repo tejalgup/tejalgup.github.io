@@ -50,7 +50,7 @@ Select an agent role o(〃＾▽＾〃)o:
     // Generate a random agent from the selected array
     var randomIndex = Math.floor(Math.random() * agentArray.length);
     var selectedAgent = agentArray[randomIndex];
-    var imagePath = "/assets/images/agents/" + selectedAgent + ".png
+    var imagePath = "/assets/images/agents/" + selectedAgent + ".png"
     
      // Set the agent name and image
     document.getElementById("agentName").textContent = "Selected Agent: " + selectedAgent;
