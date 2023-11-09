@@ -26,7 +26,7 @@ Select an agent role o(〃＾▽＾〃)o:
 
 <script>
 
-  function createAgentMatrix() {
+  
 
   var duelistAgents = ["Jett", "Raze", "Phoenix", "Reyna", "Yoru", "Neon", "Iso"];
   var initiatorAgents = ["Sova", "Breach", "KAYO", "Skye", "Fade", "Gekko"];
@@ -34,7 +34,7 @@ Select an agent role o(〃＾▽＾〃)o:
   var sentinelAgents = ["Sage", "Cypher", "Killjoy", "Chamber", "Deadlock"];
   var agentArray = duelistAgents.concat(initiatorAgents, controllerAgents, sentinelAgents);
 
-
+function createAgentMatrix() {
   var agentMatrixContainer = document.getElementById("agentMatrixContainer");
   agentMatrixContainer.innerHTML = ""; // Clear previous content
 
@@ -74,16 +74,6 @@ Select an agent role o(〃＾▽＾〃)o:
 }
 
 
-
-
-  // Array of Valorant agents' names
-
-  var duelistAgents = ["Jett", "Raze", "Phoenix", "Reyna", "Yoru", "Neon", "Iso"];
-  var initiatorAgents = ["Sova", "Breach", "KAYO", "Skye", "Fade", "Gekko"];
-  var controllerAgents = ["Brimstone", "Viper", "Omen", "Astra", "Harbor"];
-  var sentinelAgents = ["Sage", "Cypher", "Killjoy", "Chamber", "Deadlock"];
-  var allAgents = duelistAgents.concat(initiatorAgents, controllerAgents, sentinelAgents);
-
   // Function to display a randomly selected agent from the chosen role
   function displayRandomAgent() {
     var selectedRole = document.getElementById("roleDropdown").value;
@@ -91,7 +81,7 @@ Select an agent role o(〃＾▽＾〃)o:
 
     // Determine the appropriate array based on the selected role
     if (selectedRole === "Custom") {
-    createAgentMatrix(); // Show agent matrix for custom selection
+        createAgentMatrix(); // Show agent matrix for custom selection
     } else {
 
         if (selectedRole === "Duelist") {
@@ -121,6 +111,7 @@ Select an agent role o(〃＾▽＾〃)o:
  // Attach the function to the button click event
   document.getElementById("generateButton").addEventListener("click", displayRandomAgent);
 </script>  
+
 <style>
 .agent-matrix-container {
   display: flex;
