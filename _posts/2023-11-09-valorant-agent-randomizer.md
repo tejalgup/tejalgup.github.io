@@ -14,7 +14,7 @@ Select an agent role o(〃＾▽＾〃)o:
   <option value="Sentinel">Sentinel</option>
 </select>
 
-<button id="generateButton">Generate Agent Image</button>
+<button id="generateButton">Pick an Agent!</button>
 <div id="agentImageContainer">
   <div id="agentName"></div>
   <img id="agentImage" src="/assets/images/agents/Valorant.png" alt="Agent Image">
