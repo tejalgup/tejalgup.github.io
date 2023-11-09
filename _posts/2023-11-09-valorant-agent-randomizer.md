@@ -6,14 +6,6 @@ categories: gaming
 # Random Agent Generator
 
 Select an agent role o(〃＾▽＾〃)o: 
-<select id="roleDropdown">
-  <option value="All">All Agents</option>
-  <option value="Duelist">Duelist</option>
-  <option value="Initiator">Initiator</option>
-  <option value="Controller">Controller</option>
-  <option value="Sentinel">Sentinel</option>
-  <option value="Custom">Custom</option>
-</select>
 
 <button id="generateButton">Pick an Agent!</button>
 
@@ -26,20 +18,22 @@ Select an agent role o(〃＾▽＾〃)o:
 
 <script>
 
-  var duelistAgents = ["Jett", "Raze", "Phoenix", "Reyna", "Yoru", "Neon", "Iso"];
-  var initiatorAgents = ["Sova", "Breach", "KAYO", "Skye", "Fade", "Gekko"];
-  var controllerAgents = ["Brimstone", "Viper", "Omen", "Astra", "Harbor"];
-  var sentinelAgents = ["Sage", "Cypher", "Killjoy", "Chamber", "Deadlock"];
-  var allAgents = duelistAgents.concat(initiatorAgents, controllerAgents, sentinelAgents);
-  var agentArray = [];
+  var agentRoles = {
+    Duelist: ["Jett", "Raze", "Phoenix", "Reyna", "Yoru", "Neon", "Iso"],
+    Initiator: ["Sova", "Breach", "KAYO", "Skye", "Fade", "Gekko"],
+    Controller: ["Brimstone", "Viper", "Omen", "Astra", "Harbor"],
+    Sentinel: ["Sage", "Cypher", "Killjoy", "Chamber", "Deadlock"]
+  };
+
+  var selectedAgents = [];
 
 
-function createAgentMatrix() {
+function createAgentMatrix(role) {
 
   var agentMatrixContainer = document.getElementById("agentMatrixContainer");
   agentMatrixContainer.innerHTML = ""; // Clear previous content
 
-  allAgents.forEach(agent => {
+  agentRoles[role].forEach(agent => {
     var button = document.createElement("button");
     button.className = "agent-button";
 
@@ -54,17 +48,22 @@ function createAgentMatrix() {
     agentNameDiv.textContent = agent;
     agentNameDiv.className = "agent-name";
 
-    // Add event listener to toggle agent inclusion in the array
+    // Add event listener to toggle agent inclusion in the selectedAgents array
     button.addEventListener("click", function() {
-      var index = agentArray.indexOf(agent);
+      var index = selectedAgents.indexOf(agent);
       if (index !== -1) {
-        agentArray.splice(index, 1); // Remove agent from the array
+        selectedAgents.splice(index, 1); // Remove agent from selectedAgents array
         button.classList.remove("selected"); // Remove selected class
       } else {
-        agentArray.push(agent); // Include agent in the array
+        selectedAgents.push(agent); // Add agent to selectedAgents array
         button.classList.add("selected"); // Add selected class
       }
     });
+
+    // Check if agent is already selected and add selected class
+    if (selectedAgents.includes(agent)) {
+      button.classList.add("selected");
+    }
 
     // Append agent image and name to the button
     button.appendChild(agentImage);
@@ -76,27 +75,12 @@ function createAgentMatrix() {
 
   // Function to display a randomly selected agent from the chosen role
   function displayRandomAgent() {
-    var selectedRole = document.getElementById("roleDropdown").value;
 
-    if (selectedRole === "Custom"){
-      createAgentMatrix(); // Call createAgentMatrix() for custom selection
-    }else{
-        if (selectedRole === "Duelist") {
-        agentArray = duelistAgents;
-        } else if (selectedRole === "Initiator") {
-        agentArray = initiatorAgents;
-        } else if (selectedRole === "Controller") {
-        agentArray = controllerAgents;
-        } else if (selectedRole === "Sentinel") {
-        agentArray = sentinelAgents;
-        } else if (selectedRole === "All") {
-        agentArray = allAgents;
-        }
-    }
+    createAgentMatrix()
 
     // Generate a random agent from the selected array
-    var randomIndex = Math.floor(Math.random() * agentArray.length);
-    var selectedAgent = agentArray[randomIndex];
+    var randomIndex = Math.floor(Math.random() * selectedAgents.length);
+    var selectedAgent = selectedAgents[randomIndex];
     var imagePath = "/assets/images/agents/" + selectedAgent + ".png"
     
      // Set the agent name and image
