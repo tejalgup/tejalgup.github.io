@@ -43,6 +43,7 @@ function createAgentMatrix() {
         var toggleButton = document.createElement("button");
         toggleButton.className = "toggle-button";
         toggleButton.addEventListener("click", function() {
+            selectedAgents = []; // Clear selectedAgents array before adding agents
             var roleAgents = agentRoles[role];
             var shouldSelect = !roleAgents.every(agent => selectedAgents.includes(agent));
             if (shouldSelect) {
@@ -79,11 +80,6 @@ function createAgentMatrix() {
       var agentNameDiv = document.createElement("div");
       agentNameDiv.textContent = agent;
       agentNameDiv.className = "agent-name";
-
-    // Add agents to the selectedAgents array and toggle corresponding buttons
-      selectedAgents.push(agent);
-      button.classList.add("selected");
-
 
       button.addEventListener("click", function() {
         var index = selectedAgents.indexOf(agent);
