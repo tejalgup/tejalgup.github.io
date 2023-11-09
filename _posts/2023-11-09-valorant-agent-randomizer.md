@@ -53,7 +53,7 @@ Select an agent role o(〃＾▽＾〃)o:
     var imagePath = "/assets/images/agents/" + selectedAgent + ".png
     
      // Set the agent name and image
-    document.getElementById("agentName").textContent = "Selected Agent: " + imagePath;
+    document.getElementById("agentName").textContent = "Selected Agent: " + selectedAgent;
     document.getElementById("agentImage").src = imagePath;
 
   }
