@@ -9,13 +9,14 @@ Select an agent role o(〃＾▽＾〃)o:
 
 <button id="generateButton">Pick an Agent!</button>
 
-<div id="agentImageContainer">
-  <div id="agentName"></div>
-  <img id="agentImage" src="/assets/images/agents/Valorant.png" alt="Agent Image"></div>
+
 
 <div id="agentMatrixContainer" class="agent-matrix-container"></div>
 
-
+<div id="agentImageContainer">
+  <div id="agentName"></div>
+  <img id="agentImage" src="/assets/images/agents/Valorant.png" alt="Agent Image"></div>
+  
 <script>
 
   var agentRoles = {
@@ -29,49 +30,41 @@ Select an agent role o(〃＾▽＾〃)o:
 
 
 function createAgentMatrix(role) {
+    var agentMatrixContainer = document.getElementById("agentMatrixContainer");
+    agentRoles[role].forEach(agent => {
+      var button = document.createElement("button");
+      button.className = "agent-button";
 
-  var agentMatrixContainer = document.getElementById("agentMatrixContainer");
-  agentMatrixContainer.innerHTML = ""; // Clear previous content
+      var agentImage = document.createElement("img");
+      agentImage.src = `https://static.valorantstats.xyz/agent-headshots/${agent.toLowerCase()}-headshot.png`;
+      agentImage.alt = agent;
+      agentImage.className = "agent-image";
 
-  agentRoles[role].forEach(agent => {
-    var button = document.createElement("button");
-    button.className = "agent-button";
+      var agentNameDiv = document.createElement("div");
+      agentNameDiv.textContent = agent;
+      agentNameDiv.className = "agent-name";
 
-    // Create an image element for the agent
-    var agentImage = document.createElement("img");
-    agentImage.src = `https://static.valorantstats.xyz/agent-headshots/${agent.toLowerCase()}-headshot.png`;
-    agentImage.alt = agent; // Use the agent's name as the alt text
-    agentImage.className = "agent-image";
+      button.addEventListener("click", function() {
+        var index = selectedAgents.indexOf(agent);
+        if (index !== -1) {
+          selectedAgents.splice(index, 1);
+          button.classList.remove("selected");
+        } else {
+          selectedAgents.push(agent);
+          button.classList.add("selected");
+        }
+      });
 
-    // Create a div element for the agent's name
-    var agentNameDiv = document.createElement("div");
-    agentNameDiv.textContent = agent;
-    agentNameDiv.className = "agent-name";
-
-    // Add event listener to toggle agent inclusion in the selectedAgents array
-    button.addEventListener("click", function() {
-      var index = selectedAgents.indexOf(agent);
-      if (index !== -1) {
-        selectedAgents.splice(index, 1); // Remove agent from selectedAgents array
-        button.classList.remove("selected"); // Remove selected class
-      } else {
-        selectedAgents.push(agent); // Add agent to selectedAgents array
-        button.classList.add("selected"); // Add selected class
+      if (selectedAgents.includes(agent)) {
+        button.classList.add("selected");
       }
+
+      button.appendChild(agentImage);
+      button.appendChild(agentNameDiv);
+      agentMatrixContainer.appendChild(button);
     });
+  }
 
-    // Check if agent is already selected and add selected class
-    if (selectedAgents.includes(agent)) {
-      button.classList.add("selected");
-    }
-
-    // Append agent image and name to the button
-    button.appendChild(agentImage);
-    button.appendChild(agentNameDiv);
-
-    agentMatrixContainer.appendChild(button);
-  });
-}
 createAgentMatrix("Duelist");
 createAgentMatrix("Initiator");
 createAgentMatrix("Controller");
@@ -94,7 +87,7 @@ createAgentMatrix("Sentinel");
   }
 
  // Attach the function to the button click event
-  document.getElementById("generateButton").addEventListener("click", displayRandomAgent);
+document.getElementById("generateButton").addEventListener("click", displayRandomAgent);
 </script>  
 
 <style>
