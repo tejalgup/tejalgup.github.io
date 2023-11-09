@@ -5,6 +5,7 @@ categories: gaming
 
 # Random Agent Generator
 
+Select an agent role o(〃＾▽＾〃)o: 
 <select id="roleDropdown">
   <option value="All">All Agents</option>
   <option value="Duelist">Duelist</option>
@@ -51,10 +52,16 @@ categories: gaming
     var selectedAgent = agentArray[randomIndex];
     var agentImageSrc = "agents/" + selectedAgent + ".png";
 
-    // Display agent name and image
-    document.getElementById("agentName").innerHTML = "Selected Agent: " + selectedAgent;
+    // Display agent name and image file name
+    document.getElementById("agentName").textContent = "Selected Agent: " + selectedAgent;
+    var agentFileName = agentImageSrc.split('/').pop(); // Get the filename from the URL
     document.getElementById("agentImage").src = agentImageSrc;
+
+    // Display the image file name without the extension
+    document.getElementById("agentImageFileName").textContent = "Image File: " + agentFileName;
   }
+
+<div id="agentImageFileName"></div>
 
  // Attach the function to the button click event
   document.getElementById("generateButton").addEventListener("click", displayRandomAgent);
