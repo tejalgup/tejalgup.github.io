@@ -16,7 +16,7 @@ Select an agent role o(〃＾▽＾〃)o:
 <div id="agentImageContainer">
   <div id="agentName"></div>
   <img id="agentImage" src="/assets/images/agents/Valorant.png" alt="Agent Image"></div>
-  
+
 <script>
 
   var agentRoles = {
@@ -29,8 +29,21 @@ Select an agent role o(〃＾▽＾〃)o:
   var selectedAgents = [];
 
 
-function createAgentMatrix(role) {
+function createAgentMatrix() {
     var agentMatrixContainer = document.getElementById("agentMatrixContainer");
+
+      // Iterate through each role in agentRoles
+    Object.keys(agentRoles).forEach(role => {
+    // Create a new row (div) for the current role
+    var roleRow = document.createElement("div");
+    roleRow.className = "role-row";
+
+    // Create a header for the role
+    var roleHeader = document.createElement("h2");
+    roleHeader.textContent = role;
+    roleRow.appendChild(roleHeader);
+
+
     agentRoles[role].forEach(agent => {
       var button = document.createElement("button");
       button.className = "agent-button";
@@ -65,10 +78,7 @@ function createAgentMatrix(role) {
     });
   }
 
-createAgentMatrix("Duelist");
-createAgentMatrix("Initiator");
-createAgentMatrix("Controller");
-createAgentMatrix("Sentinel");
+createAgentMatrix();
 
   // Function to display a randomly selected agent from the chosen role
   function displayRandomAgent() {
