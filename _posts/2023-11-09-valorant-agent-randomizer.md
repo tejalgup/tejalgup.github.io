@@ -18,10 +18,10 @@ Select an agents! Click role icon to toggle row on/off o(〃＾▽＾〃)o:
 <script>
 
   var agentRoles = {
-    Duelist: ["Jett", "Raze", "Phoenix", "Reyna", "Yoru", "Neon", "Iso"],
-    Initiator: ["Sova", "Breach", "KAYO", "Skye", "Fade", "Gekko"],
-    Controller: ["Brimstone", "Viper", "Omen", "Astra", "Harbor"],
-    Sentinel: ["Sage", "Cypher", "Killjoy", "Chamber", "Deadlock"]
+    Duelist: [ "Iso", "Jett", "Neon", "Phoenix", "Raze", "Reyna", "Yoru"],
+    Initiator: ["Breach", "Fade", "Gekko", "KAYO", "Skye", "Sova"],
+    Controller: ["Astra", "Brimstone", "Harbor", "Omen", "Viper"],
+    Sentinel: ["Chamber", "Cypher", "Deadlock", "Killjoy", "Sage"]
   };
 
   var selectedAgents = [];
