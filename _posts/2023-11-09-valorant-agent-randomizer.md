@@ -3,21 +3,59 @@ layout: post
 categories: gaming
 ---
 
-# Random Number Generator
+# Random Agent Generator
 
-Click the button to generate a random number between 1 and 23:
+<select id="roleDropdown">
+  <option value="All">All Agents</option>
+  <option value="Duelist">Duelist</option>
+  <option value="Initiator">Initiator</option>
+  <option value="Controller">Controller</option>
+  <option value="Sentinel">Sentinel</option>
+</select>
 
-<button id="generateButton">Generate Random Number</button>
-<div id="randomNumber"></div>
+<button id="generateButton">Generate Agent Image</button>
+<div id="agentImageContainer">
+  <div id="agentName"></div>
+  <img id="agentImage" src="" alt="Agent Image">
+</div>
 
 <script>
-  // Function to generate and display a random number between 1 and 23
-  function generateRandomNumber() {
-    // Generate a random number between 1 and 23
-    var randomNumber = Math.floor(Math.random() * 23) + 1;
-    document.getElementById("randomNumber").innerHTML = "Random Number: " + randomNumber;
+  // Array of Valorant agents' names
+
+  var duelistAgents = ["Jett", "Raze", "Phoenix", "Reyna", "Yoru", "Neon", "Iso"];
+  var initiatorAgents = ["Sova", "Breach", "KAYO", "Skye", "Fade", "Gekko"];
+  var controllerAgents = ["Brimstone", "Viper", "Omen", "Astra", "Harbor"];
+  var sentinelAgents = ["Sage", "Cypher", "Killjoy", "Chamber", "Deadlock"];
+  var allAgents = duelistAgents.concat(initiatorAgents, controllerAgents, sentinelAgents);
+
+  // Function to display a randomly selected agent from the chosen role
+  function displayRandomAgent() {
+    var selectedRole = document.getElementById("roleDropdown").value;
+    var agentArray = [];
+
+    // Determine the appropriate array based on the selected role
+    if (selectedRole === "Duelist") {
+      agentArray = duelistAgents;
+    } else if (selectedRole === "Initiator") {
+      agentArray = initiatorAgents;
+    } else if (selectedRole === "Controller") {
+      agentArray = controllerAgents;
+    } else if (selectedRole === "Sentinel") {
+      agentArray = sentinelAgents;
+    } else if (selectedRole === "All") {
+      agentArray = allAgents;
+    }
+
+    // Generate a random agent from the selected array
+    var randomIndex = Math.floor(Math.random() * agentArray.length);
+    var selectedAgent = agentArray[randomIndex];
+    var agentImageSrc = "agents/" + selectedAgent + ".png";
+
+    // Display agent name and image
+    document.getElementById("agentName").innerHTML = "Selected Agent: " + selectedAgent;
+    document.getElementById("agentImage").src = agentImageSrc;
   }
 
-  // Attach the function to the button click event
-  document.getElementById("generateButton").addEventListener("click", generateRandomNumber);
-</script>
+ // Attach the function to the button click event
+  document.getElementById("generateButton").addEventListener("click", displayRandomAgent);
+</script>  
