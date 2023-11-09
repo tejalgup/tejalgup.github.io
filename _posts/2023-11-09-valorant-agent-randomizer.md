@@ -54,8 +54,13 @@ function createAgentMatrix() {
       agentImage.className = "agent-image";
 
       var agentNameDiv = document.createElement("div");
-      agentNameDiv.textContent = agent;
+      agent NameDiv.textContent = agent;
       agentNameDiv.className = "agent-name";
+
+    // Add agents to the selectedAgents array and toggle corresponding buttons
+      selectedAgents.push(agent);
+      button.classList.add("selected");
+
 
       button.addEventListener("click", function() {
         var index = selectedAgents.indexOf(agent);
@@ -74,7 +79,9 @@ function createAgentMatrix() {
 
       button.appendChild(agentImage);
       button.appendChild(agentNameDiv);
-      agentMatrixContainer.appendChild(button);
+      roleRow.appendChild(button);
+    });
+    agentMatrixContainer.appendChild(roleRow);
     });
   }
 
@@ -82,8 +89,6 @@ createAgentMatrix();
 
   // Function to display a randomly selected agent from the chosen role
   function displayRandomAgent() {
-
-    
 
     // Generate a random agent from the selected array
     var randomIndex = Math.floor(Math.random() * selectedAgents.length);
