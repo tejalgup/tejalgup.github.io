@@ -72,11 +72,15 @@ function createAgentMatrix(role) {
     agentMatrixContainer.appendChild(button);
   });
 }
+createAgentMatrix("Duelist");
+createAgentMatrix("Initiator");
+createAgentMatrix("Controller");
+createAgentMatrix("Sentinel");
 
   // Function to display a randomly selected agent from the chosen role
   function displayRandomAgent() {
 
-    createAgentMatrix()
+    
 
     // Generate a random agent from the selected array
     var randomIndex = Math.floor(Math.random() * selectedAgents.length);
