@@ -166,8 +166,8 @@ function createAgentMatrix() {
 }
 
 .role-icon {
-  width: 74px; /* Set the width to match the agent images */
-  height: 74px; /* Set the height to match the agent images */
+  width: 75px; /* Set the width to match the agent images */
+  height: 75px; /* Set the height to match the agent images */
 }
 
 .agent-button.selected {
