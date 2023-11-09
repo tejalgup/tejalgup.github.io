@@ -50,19 +50,13 @@ Select an agent role o(〃＾▽＾〃)o:
     // Generate a random agent from the selected array
     var randomIndex = Math.floor(Math.random() * agentArray.length);
     var selectedAgent = agentArray[randomIndex];
-    var agentImageSrc = "agents/" + selectedAgent + ".png";
-
-    // Display agent name and image file name
+    
+     // Set the agent name and image
     document.getElementById("agentName").textContent = "Selected Agent: " + selectedAgent;
-    var agentFileName = agentImageSrc.split('/').pop(); // Get the filename from the URL
-    document.getElementById("agentImage").src = agentImageSrc;
+    document.getElementById("agentImage").src = "agents/" + selectedAgent.toLowerCase().replace(/\s/g, '') + ".png";
 
-    // Display the image file name without the extension
-    document.getElementById("agentImageFileName").textContent = "Image File: " + agentFileName;
   }
-
-<div id="agentImageFileName"></div>
-
+  
  // Attach the function to the button click event
   document.getElementById("generateButton").addEventListener("click", displayRandomAgent);
 </script>  
