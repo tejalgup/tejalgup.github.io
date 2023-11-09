@@ -12,6 +12,7 @@ Select an agent role o(〃＾▽＾〃)o:
   <option value="Initiator">Initiator</option>
   <option value="Controller">Controller</option>
   <option value="Sentinel">Sentinel</option>
+  <option value="Custom">Custom</option>
 </select>
 
 <button id="generateButton">Pick an Agent!</button>
@@ -20,32 +21,77 @@ Select an agent role o(〃＾▽＾〃)o:
   <div id="agentName"></div>
   <img id="agentImage" src="/assets/images/agents/Valorant.png" alt="Agent Image"></div>
 
+<div id="agentMatrixContainer" class="agent-matrix-container"></div>
+
 
 <script>
-
-  
 
   var duelistAgents = ["Jett", "Raze", "Phoenix", "Reyna", "Yoru", "Neon", "Iso"];
   var initiatorAgents = ["Sova", "Breach", "KAYO", "Skye", "Fade", "Gekko"];
   var controllerAgents = ["Brimstone", "Viper", "Omen", "Astra", "Harbor"];
   var sentinelAgents = ["Sage", "Cypher", "Killjoy", "Chamber", "Deadlock"];
   var allAgents = duelistAgents.concat(initiatorAgents, controllerAgents, sentinelAgents);
+  var agentArray = [];
+
+
+function createAgentMatrix() {
+
+  var agentMatrixContainer = document.getElementById("agentMatrixContainer");
+  agentMatrixContainer.innerHTML = ""; // Clear previous content
+
+  allAgents.forEach(agent => {
+    var button = document.createElement("button");
+    button.className = "agent-button";
+
+    // Create an image element for the agent
+    var agentImage = document.createElement("img");
+    agentImage.src = `https://static.valorantstats.xyz/agent-headshots/${agent.toLowerCase()}-headshot.png`;
+    agentImage.alt = agent; // Use the agent's name as the alt text
+    agentImage.className = "agent-image";
+
+    // Create a div element for the agent's name
+    var agentNameDiv = document.createElement("div");
+    agentNameDiv.textContent = agent;
+    agentNameDiv.className = "agent-name";
+
+    // Add event listener to toggle agent inclusion in the array
+    button.addEventListener("click", function() {
+      var index = agentArray.indexOf(agent);
+      if (index !== -1) {
+        agentArray.splice(index, 1); // Remove agent from the array
+        button.classList.remove("selected"); // Remove selected class
+      } else {
+        agentArray.push(agent); // Include agent in the array
+        button.classList.add("selected"); // Add selected class
+      }
+    });
+
+    // Append agent image and name to the button
+    button.appendChild(agentImage);
+    button.appendChild(agentNameDiv);
+
+    agentMatrixContainer.appendChild(button);
+  });
+}
 
   // Function to display a randomly selected agent from the chosen role
   function displayRandomAgent() {
     var selectedRole = document.getElementById("roleDropdown").value;
-    var agentArray = [];
 
-    if (selectedRole === "Duelist") {
-    agentArray = duelistAgents;
-    } else if (selectedRole === "Initiator") {
-    agentArray = initiatorAgents;
-    } else if (selectedRole === "Controller") {
-    agentArray = controllerAgents;
-    } else if (selectedRole === "Sentinel") {
-    agentArray = sentinelAgents;
-    } else if (selectedRole === "All") {
-    agentArray = allAgents;
+    if (selectedRole === "Custom"){
+      createAgentMatrix(); // Call createAgentMatrix() for custom selection
+    }else{
+        if (selectedRole === "Duelist") {
+        agentArray = duelistAgents;
+        } else if (selectedRole === "Initiator") {
+        agentArray = initiatorAgents;
+        } else if (selectedRole === "Controller") {
+        agentArray = controllerAgents;
+        } else if (selectedRole === "Sentinel") {
+        agentArray = sentinelAgents;
+        } else if (selectedRole === "All") {
+        agentArray = allAgents;
+        }
     }
 
     // Generate a random agent from the selected array
