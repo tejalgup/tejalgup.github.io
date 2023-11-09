@@ -54,7 +54,7 @@ function createAgentMatrix() {
       agentImage.className = "agent-image";
 
       var agentNameDiv = document.createElement("div");
-      agent NameDiv.textContent = agent;
+      agentNameDiv.textContent = agent;
       agentNameDiv.className = "agent-name";
 
     // Add agents to the selectedAgents array and toggle corresponding buttons
