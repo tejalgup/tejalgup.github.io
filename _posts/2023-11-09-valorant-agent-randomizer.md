@@ -17,6 +17,7 @@ Select an agent role o(〃＾▽＾〃)o:
 <button id="generateButton">Generate Agent Image</button>
 <div id="agentImageContainer">
   <div id="agentName"></div>
+  <div id="fileName></div>
   <img id="agentImage" src="" alt="Agent Image">
 </div>
 
@@ -56,10 +57,11 @@ Select an agent role o(〃＾▽＾〃)o:
     
      // Set the agent name and image
     document.getElementById("agentName").textContent = "Selected Agent: " + selectedAgent;
+    document.getElementById("fileName").textContent = "File Name: " + agentFileName;
     document.getElementById("agentImage").src = agentFileName;
 
     // Print the filename to the console for debugging
-    document.getElementById("fileName").textContent = "File Name: " + agentFileName;
+
   }
 
  // Attach the function to the button click event
