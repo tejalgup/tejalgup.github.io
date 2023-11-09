@@ -25,6 +25,11 @@ Select an agent role o(〃＾▽＾〃)o:
   };
 
   var selectedAgents = [];
+// Initialize selectedAgents with all agents
+  Object.keys(agentRoles).forEach(role => {
+    selectedAgents.push(...agentRoles[role]);
+  });
+
 
 function toggleRoleAgents(role) {
     var roleAgents = agentRoles[role];
@@ -102,6 +107,11 @@ function createAgentMatrix() {
     });
     agentMatrixContainer.appendChild(roleRow);
     });
+    if (selectedAgents.length === 0) {
+      // No agents selected, display a message and set the initial Valorant image
+      document.getElementById("agentName").textContent = "Nothing Selected";
+      document.getElementById("agentImage").src = "/assets/images/agents/Valorant.png";
+    }
   }
 
   createAgentMatrix();
@@ -153,8 +163,8 @@ function createAgentMatrix() {
 }
 
 .role-icon {
-  width: 70px; /* Set the width to match the agent images */
-  height: 70px; /* Set the height to match the agent images */
+  width: 80px; /* Set the width to match the agent images */
+  height: 80px; /* Set the height to match the agent images */
 }
 
 .agent-button.selected {
