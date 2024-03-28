@@ -4,7 +4,9 @@ categories: life
 ---
 Do you ever wonder who you'll end up with? Constantly it runs through my mind. But I'm at the point where I want to wait and really take my time choosing somebody to get close to my heart. Somebody I can trust and who I know is right for me. I'm used to sticking with people I don't see a long-term future with because I was lonely, but now I want to learn what it's like to be single. To not look for anything in any capacity. No more apps, no more daydreaming about people on the street, I just want to live my life on my own for once. But that doesn't mean I'll ever stop dreaming....
 This is a letter for the future, for my hope
-------------------
+
+--------------------------------------------------------------------
+
 Dear Future Husband,
 
 That’s a crazy line to say- very Megan Trainor. I don’t know why I’m writing this. Maybe it’ll be something cute to look back on. It’ll give you a chance to know who I really am before I meet you. But to be completely honest right now, I’m trying to work on myself so I can figure out who I am. And when I meet you, I want to stay true to that. 
