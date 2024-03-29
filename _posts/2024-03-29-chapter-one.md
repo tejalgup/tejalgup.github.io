@@ -8,8 +8,6 @@ I looked to the stars; another night but it's still you I see.
 
 -------------------------------------------------------------------------------------
 
-Chapter 1:
-
 “Ugh, the weather is starting to get bad Nori. We should hurry up,” my roommate Mona calls out to me as we pack our beach towels and hurry towards the car. The weather was so perfect on the mainland, but a dark front was approaching from oceanside. It slowly begins to drizzle over us as we put up our umbrellas.
 
 Suddenly, a white light blinds me. As the light fades, I find myself transported to nighttime, and my legs are moving faster than I remembered. I’m running so fast that I can’t keep up with it and topple over face planting into the cold sand. Wait, that can’t be right? It was around 2 pm the last time I checked. I look around and see the familiar Santa Cruz Boardwalk Amusement Park lit up in the distance. I hear the sound of footsteps trailing me, somebody’s following me. I try to look around to figure out who it is, but they’re engulfed in the darkness still. “What’s going on?” I call out.
