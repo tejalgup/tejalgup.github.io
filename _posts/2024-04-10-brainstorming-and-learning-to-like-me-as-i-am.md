@@ -76,3 +76,7 @@ edit: after thinking about it, if she sacrifices herself, what is she learning? 
 maybe this whole concept should be scratched. i dont think im capable of writing a self love like that. i like who i am but it doesnt mean i can keep going on the way i am right now. im ready to accept defeat
 
 i keep trying and trying to get help looking to the people around me but there is no more hope and that's okay. it's okay for things to end. it's crazy, even though i feel like this, i don't feel lost. it brings me solace knowing what i have to do
+
+-------------------------------------------------------------------------------------
+
+edit 2: i think im being TOO pessimistic. i gave myself a deadline. i gave myself a goal, i need to stay optmistic so i can reach it. i still have a chance at life. i still have a chance and i will stay strong till then. i need to stop letting shitty boys impact my self esteem. i am smart and i have a lot of (okay singular for NOW but i have some time still) opportunities and i have a chance- i deserve this chance. i am a good person and i deserve this
