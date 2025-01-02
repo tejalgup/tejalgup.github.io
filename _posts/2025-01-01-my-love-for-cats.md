@@ -5,6 +5,7 @@ title: My love for cats
 subtitle: From cat mom to grant writing for cat rescues.
 description: My love for cats in my life from being a cat mom to volunteering at a cat rescue.
 image: ![IMG_20230930_162836_010](https://github.com/user-attachments/assets/afe62f0c-1c95-4bdd-ac25-ab11139da661)
+optimized_image: ![IMG_20230930_162836_010](https://github.com/user-attachments/assets/afe62f0c-1c95-4bdd-ac25-ab11139da661)
 category: volunteering
 tags:
   - volunteering
